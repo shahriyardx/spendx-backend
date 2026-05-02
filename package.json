@@ -17,7 +17,9 @@
   },
   "dependencies": {
     "@better-auth/expo": "^1.6.9",
+    "@types/better-sqlite3": "^7.6.13",
     "better-auth": "^1.6.9",
+    "better-sqlite3": "^12.9.0",
     "cors": "^2.8.6",
     "drizzle-orm": "^0.45.2",
     "express": "^5.2.1"
