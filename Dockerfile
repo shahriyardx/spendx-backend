@@ -7,7 +7,7 @@ RUN bun install --frozen-lockfile --production
 
 COPY prisma ./prisma
 RUN bun prisma generate
-
+RUN bun prisma migrate deploy
 FROM oven/bun:1-alpine
 
 WORKDIR /app
@@ -22,4 +22,4 @@ ENV NODE_ENV=production
 
 EXPOSE 5000
 
-CMD ["bun", "sh", "-c", "bun prisma migrate deploy && bun run ./src/index.ts"]
+CMD ["bun", "run", "./src/index.ts"]
