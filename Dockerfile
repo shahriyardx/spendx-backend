@@ -15,7 +15,7 @@ COPY --from=install /app/src/generated ./src/generated
 COPY --from=install /app/prisma ./prisma
 COPY src ./src
 COPY start.sh ./
-COPY package.json tsconfig.json ./
+COPY package.json tsconfig.json prisma.config.ts ./
 
 ENV NODE_ENV=production
 EXPOSE 5000
