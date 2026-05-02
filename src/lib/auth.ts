@@ -1,6 +1,6 @@
 import { expo } from "@better-auth/expo";
 import { betterAuth } from "better-auth";
-import Database from "better-sqlite3";
+import { Database } from "bun:sqlite";
 
 export const auth = betterAuth({
   database: new Database("database.sqlite"),
