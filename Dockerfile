@@ -4,6 +4,7 @@ WORKDIR /app
 
 COPY bun.lock package.json ./
 RUN bun install --frozen-lockfile --production
+RUN bun prisma migrate deploy
 
 FROM oven/bun:1-alpine
 

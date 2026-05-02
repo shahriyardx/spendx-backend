@@ -1,9 +1,12 @@
 import { expo } from "@better-auth/expo";
 import { betterAuth } from "better-auth";
-import { Database } from "bun:sqlite";
+import { prismaAdapter } from "better-auth/adapters/prisma";
+import { prisma } from "./db";
 
 export const auth = betterAuth({
-  database: new Database("database.sqlite"),
+  database: prismaAdapter(prisma, {
+    provider: "postgresql",
+  }),
   baseURL: process.env.BETTER_AUTH_URL,
   secret: process.env.BETTER_AUTH_SECRET,
   plugins: [expo()],
